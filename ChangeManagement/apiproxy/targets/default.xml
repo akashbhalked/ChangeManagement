@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TargetEndpoint name="default">
+  <Description>Change Management</Description>
+  <Flows/>
+  <FaultRules>
+    <FaultRule name="defaultFaultTarget">
+      <Step>
+        <Name>3-AM-AssignLogPoint</Name>
+      </Step>
+      <Step>
+        <Name>4-JS-AssignLogPoint</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-LogContent</Name>
+      </Step>
+      <Step>
+        <Name>3-AM-RemoveLogPoint</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-HandleFaults</Name>
+      </Step>
+      <Step>
+        <Name>4-JS-AssignLogPoint</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-LogContent</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-ApigeeAnalytics</Name>
+      </Step>
+    </FaultRule>
+  </FaultRules>
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>0-SF-RouteToTargetServer</Name>
+      </Step>
+      <Step>
+        <Name>4-JS-AssignLogPoint</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-LogContent</Name>
+      </Step>
+    </Request>
+    <Response/>
+  </PreFlow>
+  <PostFlow name="PostFlow">
+    <Request>
+      <Step>
+        <FaultRules/>
+        <Name>0-SF-SetBEHeaders</Name>
+      </Step>
+    </Request>
+    <Response>
+      <Step>
+        <Name>4-JS-AssignLogPoint</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-LogContent</Name>
+      </Step>
+    </Response>
+  </PostFlow>
+  <HTTPTargetConnection>
+    <SSLInfo>
+      <Ciphers/>
+      <ClientAuthEnabled>{ROUTING.target.ssl.client.auth.enabled}</ClientAuthEnabled>
+      <Enabled>{ROUTING.target.ssl.enabled}</Enabled>
+      <IgnoreValidationErrors>false</IgnoreValidationErrors>
+      <KeyAlias>{ROUTING.target.ssl.key.alias}</KeyAlias>
+      <KeyStore>{ROUTING.target.ssl.key.store}</KeyStore>
+      <Protocols/>
+      <TrustStore>{ROUTING.target.ssl.trust.store}</TrustStore>
+    </SSLInfo>
+    <URL>http://example.com/</URL>
+    <Properties/>
+  </HTTPTargetConnection>
+</TargetEndpoint>

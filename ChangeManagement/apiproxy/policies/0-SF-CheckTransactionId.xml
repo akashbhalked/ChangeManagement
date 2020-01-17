@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FlowCallout async="false" continueOnError="false" enabled="true" name="0-SF-CheckTransactionId">
+    <DisplayName>0-SF-CheckTransactionId</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <SharedFlowBundle>0-SF-CheckTransactionId</SharedFlowBundle>
+</FlowCallout>

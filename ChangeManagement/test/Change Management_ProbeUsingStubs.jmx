@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.2 r1790748">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="GENERIC SUITE _TESTPLAN" enabled="true">
+      <stringProp name="TestPlan.comments">Reference from - InternalDeliveryInfo2, UserPayment , UserInfo , ApixOauth , InternalCustomerDataNL2, PSI2</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager_DND" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <stringProp name="TestPlan.comments">dont delete or change</stringProp>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <stringProp name="CookieManager.policy">rfc2109</stringProp>
+        <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
+      </CookieManager>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults_DND" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">${GatewayIP}</stringProp>
+        <stringProp name="HTTPSampler.port">${GatewayPort}</stringProp>
+        <stringProp name="HTTPSampler.protocol">${GatewayProtocol}</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="TestPlan.comments">dont delete or change</stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.proxyHost"></stringProp>
+        <stringProp name="HTTPSampler.proxyPort"></stringProp>
+        <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Generic Suite" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1500290411000</longProp>
+        <longProp name="ThreadGroup.end_time">1500290411000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="*************************** USER_VARIABLES ****************************" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="JENKINS_TESTVARIABLES" enabled="true">
+          <collectionProp name="Arguments.arguments"><elementProp name="GatewayIP" elementType="Argument">
+              <stringProp name="Argument.name">GatewayIP</stringProp>
+              <stringProp name="Argument.value">${__P(GatewayIP)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GatewayProtocol" elementType="Argument">
+              <stringProp name="Argument.name">GatewayProtocol</stringProp>
+              <stringProp name="Argument.value">${__P(GatewayProtocol)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GatewayPort" elementType="Argument">
+              <stringProp name="Argument.name">GatewayPort</stringProp>
+              <stringProp name="Argument.value">${__P(GatewayPort)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="BasePath" elementType="Argument">
+              <stringProp name="Argument.name">BasePath</stringProp>
+              <stringProp name="Argument.value">${__P(BasePath)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="TestCaseName" elementType="Argument">
+              <stringProp name="Argument.name">TestCaseName</stringProp>
+              <stringProp name="Argument.value">${__P(TestCaseName)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ResponseType" elementType="Argument">
+              <stringProp name="Argument.name">ResponseType</stringProp>
+              <stringProp name="Argument.value">${__P(ResponseType)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="grant_type" elementType="Argument">
+              <stringProp name="Argument.name">grant_type</stringProp>
+              <stringProp name="Argument.value">${__P(grant_type)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="scope" elementType="Argument">
+              <stringProp name="Argument.name">scope</stringProp>
+              <stringProp name="Argument.value">${__P(scope)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="id1" elementType="Argument">
+              <stringProp name="Argument.name">id1</stringProp>
+              <stringProp name="Argument.value">${__P(id1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="shoppingCartIdentifier" elementType="Argument">
+              <stringProp name="Argument.name">shoppingCartIdentifier</stringProp>
+              <stringProp name="Argument.value">${__P(shoppingCartIdentifier)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="id" elementType="Argument">
+              <stringProp name="Argument.name">id</stringProp>
+              <stringProp name="Argument.value">${__P(id)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="client_id" elementType="Argument">
+              <stringProp name="Argument.name">client_id</stringProp>
+              <stringProp name="Argument.value">${__P(client_id)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ 			 <elementProp name="client_secret" elementType="Argument">
+              <stringProp name="Argument.name">client_secret</stringProp>
+              <stringProp name="Argument.value">${__P(client_secret)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ </collectionProp></Arguments> <hashTree/><Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="DEV_USERDEFINED_VARIABLES" enabled="false">
+          <collectionProp name="Arguments.arguments"><elementProp name="GatewayProtocol" elementType="Argument">
+              <stringProp name="Argument.name">GatewayProtocol</stringProp>
+              <stringProp name="Argument.value">https</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GatewayPort" elementType="Argument">
+              <stringProp name="Argument.name">GatewayPort</stringProp>
+              <stringProp name="Argument.value">443</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="BasePath" elementType="Argument">
+              <stringProp name="Argument.name">BasePath</stringProp>
+              <stringProp name="Argument.value">/tmf-api/changeManagement/v2/</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="TestCaseName" elementType="Argument">
+              <stringProp name="Argument.name">TestCaseName</stringProp>
+              <stringProp name="Argument.value">Change Management</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ResponseType" elementType="Argument">
+              <stringProp name="Argument.name">ResponseType</stringProp>
+              <stringProp name="Argument.value">application/json</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="grant_type" elementType="Argument">
+              <stringProp name="Argument.name">grant_type</stringProp>
+              <stringProp name="Argument.value">client_credentials</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="scope" elementType="Argument">
+              <stringProp name="Argument.name">scope</stringProp>
+              <stringProp name="Argument.value">CHANGE_MANAGEMENT_ALL</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="id1" elementType="Argument">
+              <stringProp name="Argument.name">id1</stringProp>
+              <stringProp name="Argument.value">3213</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="shoppingCartIdentifier" elementType="Argument">
+              <stringProp name="Argument.name">shoppingCartIdentifier</stringProp>
+              <stringProp name="Argument.value">123</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="id" elementType="Argument">
+              <stringProp name="Argument.name">id</stringProp>
+              <stringProp name="Argument.value">id1234</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>			 <elementProp name="devgatewayip" elementType="Argument">
+              <stringProp name="Argument.name">GatewayIP</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ 			 <elementProp name="devgatewayprotocol" elementType="Argument">
+              <stringProp name="Argument.name">GatewayProtocol</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ 			 <elementProp name="devgatewayport" elementType="Argument">
+              <stringProp name="Argument.name">GatewayPort</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ <elementProp name="client_id" elementType="Argument">
+              <stringProp name="Argument.name">client_id</stringProp>
+              <stringProp name="Argument.value">83tFesBhITBATA1khqo2ozF3CMLoI7nU</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ 			 <elementProp name="client_secret" elementType="Argument">
+              <stringProp name="Argument.name">client_secret</stringProp>
+              <stringProp name="Argument.value">JjDAUvA7sBxwyGMk</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ </collectionProp></Arguments> <hashTree/><Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="TESTING_USERDEFINED_VARIABLES" enabled="false">
+          <collectionProp name="Arguments.arguments"><elementProp name="GatewayIP" elementType="Argument">
+              <stringProp name="Argument.name">GatewayIP</stringProp>
+              <stringProp name="Argument.value">apitesting.developer.infosys.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GatewayProtocol" elementType="Argument">
+              <stringProp name="Argument.name">GatewayProtocol</stringProp>
+              <stringProp name="Argument.value">https</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GatewayPort" elementType="Argument">
+              <stringProp name="Argument.name">GatewayPort</stringProp>
+              <stringProp name="Argument.value">443</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="BasePath" elementType="Argument">
+              <stringProp name="Argument.name">BasePath</stringProp>
+              <stringProp name="Argument.value">/tmf-api/changeManagement/v2/</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="TestCaseName" elementType="Argument">
+              <stringProp name="Argument.name">TestCaseName</stringProp>
+              <stringProp name="Argument.value">Change Management</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ResponseType" elementType="Argument">
+              <stringProp name="Argument.name">ResponseType</stringProp>
+              <stringProp name="Argument.value">application/json</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="grant_type" elementType="Argument">
+              <stringProp name="Argument.name">grant_type</stringProp>
+              <stringProp name="Argument.value">client_credentials</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="scope" elementType="Argument">
+              <stringProp name="Argument.name">scope</stringProp>
+              <stringProp name="Argument.value">CHANGE_MANAGEMENT_ALL</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="id1" elementType="Argument">
+              <stringProp name="Argument.name">id1</stringProp>
+              <stringProp name="Argument.value">3213</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="shoppingCartIdentifier" elementType="Argument">
+              <stringProp name="Argument.name">shoppingCartIdentifier</stringProp>
+              <stringProp name="Argument.value">123</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="id" elementType="Argument">
+              <stringProp name="Argument.name">id</stringProp>
+              <stringProp name="Argument.value">id1234</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="TestIP" elementType="Argument">
+              <stringProp name="Argument.name">GatewayIP</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ <elementProp name="TestProtocol" elementType="Argument">
+              <stringProp name="Argument.name">GatewayProtocol</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ <elementProp name="TestPort" elementType="Argument">
+              <stringProp name="Argument.name">GatewayPort</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ <elementProp name="client_id" elementType="Argument">
+              <stringProp name="Argument.name">client_id</stringProp>
+              <stringProp name="Argument.value">CoyAUwhNvq60Qt7pIQH6WSGAzLeMwojz</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ 			 <elementProp name="client_secret" elementType="Argument">
+              <stringProp name="Argument.name">client_secret</stringProp>
+              <stringProp name="Argument.value">VFesAlZ6eMblZ2rb</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ </collectionProp></Arguments> <hashTree/><Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="STAGING_USERDEFINED_VARIABLES" enabled="false">
+          <collectionProp name="Arguments.arguments"><elementProp name="GatewayIP" elementType="Argument">
+              <stringProp name="Argument.name">GatewayIP</stringProp>
+              <stringProp name="Argument.value">apipreprod.developer.infosys.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GatewayProtocol" elementType="Argument">
+              <stringProp name="Argument.name">GatewayProtocol</stringProp>
+              <stringProp name="Argument.value">https</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GatewayPort" elementType="Argument">
+              <stringProp name="Argument.name">GatewayPort</stringProp>
+              <stringProp name="Argument.value">443</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="BasePath" elementType="Argument">
+              <stringProp name="Argument.name">BasePath</stringProp>
+              <stringProp name="Argument.value">/tmf-api/changeManagement/v2/</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="TestCaseName" elementType="Argument">
+              <stringProp name="Argument.name">TestCaseName</stringProp>
+              <stringProp name="Argument.value">Change Management</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ResponseType" elementType="Argument">
+              <stringProp name="Argument.name">ResponseType</stringProp>
+              <stringProp name="Argument.value">application/json</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="grant_type" elementType="Argument">
+              <stringProp name="Argument.name">grant_type</stringProp>
+              <stringProp name="Argument.value">client_credentials</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="scope" elementType="Argument">
+              <stringProp name="Argument.name">scope</stringProp>
+              <stringProp name="Argument.value">CHANGE_MANAGEMENT_ALL</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="id1" elementType="Argument">
+              <stringProp name="Argument.name">id1</stringProp>
+              <stringProp name="Argument.value">3213</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="shoppingCartIdentifier" elementType="Argument">
+              <stringProp name="Argument.name">shoppingCartIdentifier</stringProp>
+              <stringProp name="Argument.value">123</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="id" elementType="Argument">
+              <stringProp name="Argument.name">id</stringProp>
+              <stringProp name="Argument.value">id1234</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="GatewayIP" elementType="Argument">
+              <stringProp name="Argument.name">GatewayIP</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ <elementProp name="StagProtocol" elementType="Argument">
+              <stringProp name="Argument.name">GatewayProtocol</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ <elementProp name="StagPort" elementType="Argument">
+              <stringProp name="Argument.name">GatewayPort</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ <elementProp name="client_id" elementType="Argument">
+              <stringProp name="Argument.name">client_id</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ 			 <elementProp name="client_secret" elementType="Argument">
+              <stringProp name="Argument.name">client_secret</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ </collectionProp></Arguments> <hashTree/><Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="PRODUCTION_USERDEFINED_VARIABLES" enabled="false">
+          <collectionProp name="Arguments.arguments"><elementProp name="GatewayIP" elementType="Argument">
+              <stringProp name="Argument.name">GatewayIP</stringProp>
+              <stringProp name="Argument.value">merinorg01-test.apigee.net</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GatewayProtocol" elementType="Argument">
+              <stringProp name="Argument.name">GatewayProtocol</stringProp>
+              <stringProp name="Argument.value">https</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="GatewayPort" elementType="Argument">
+              <stringProp name="Argument.name">GatewayPort</stringProp>
+              <stringProp name="Argument.value">443</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="BasePath" elementType="Argument">
+              <stringProp name="Argument.name">BasePath</stringProp>
+              <stringProp name="Argument.value">/tmf-api/changeManagement/v2/</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="TestCaseName" elementType="Argument">
+              <stringProp name="Argument.name">TestCaseName</stringProp>
+              <stringProp name="Argument.value">Change Management</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ResponseType" elementType="Argument">
+              <stringProp name="Argument.name">ResponseType</stringProp>
+              <stringProp name="Argument.value">application/json</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="grant_type" elementType="Argument">
+              <stringProp name="Argument.name">grant_type</stringProp>
+              <stringProp name="Argument.value">client_credentials</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="scope" elementType="Argument">
+              <stringProp name="Argument.name">scope</stringProp>
+              <stringProp name="Argument.value">CHANGE_MANAGEMENT_ALL</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="id1" elementType="Argument">
+              <stringProp name="Argument.name">id1</stringProp>
+              <stringProp name="Argument.value">3213</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="shoppingCartIdentifier" elementType="Argument">
+              <stringProp name="Argument.name">shoppingCartIdentifier</stringProp>
+              <stringProp name="Argument.value">123</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="id" elementType="Argument">
+              <stringProp name="Argument.name">id</stringProp>
+              <stringProp name="Argument.value">id1234</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp><elementProp name="GatewayIP" elementType="Argument">
+              <stringProp name="Argument.name">GatewayIP</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ <elementProp name="GatewayProtocol" elementType="Argument">
+              <stringProp name="Argument.name">GatewayProtocol</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ <elementProp name="GatewayPort" elementType="Argument">
+              <stringProp name="Argument.name">GatewayPort</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ <elementProp name="client_id" elementType="Argument">
+              <stringProp name="Argument.name">client_id</stringProp>
+              <stringProp name="Argument.value">RnSxAh7D875CHJRJSxR0IBDMToq8GIr3</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ 			 <elementProp name="client_secret" elementType="Argument">
+              <stringProp name="Argument.name">client_secret</stringProp>
+              <stringProp name="Argument.value">hBG6EOlMPAyyHW7k</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+ </collectionProp>
+          <stringProp name="TestPlan.comments">PropertyFileEndsHere</stringProp>
+        </Arguments>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="ACCESS_TOKEN_GENERATOR" enabled="true">
+          <stringProp name="TestPlan.comments">Please don&apos;t delete or update the Name of Controller</stringProp>
+        </GenericController>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="OAUTH_TOKEN" enabled="true">
+            <stringProp name="TestPlan.comments">Please don&apos;t delete or update the Name of Controller</stringProp>
+          </GenericController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Access Token Generation - Grant , Scope , client Id and clientSecret is requirred" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="grant_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${grant_type}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">grant_type</stringProp>
+                    <stringProp name="Argument.desc">false</stringProp>
+                  </elementProp>
+                  <elementProp name="client_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${client_id}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">client_id</stringProp>
+                    <stringProp name="Argument.desc">false</stringProp>
+                  </elementProp>
+                  <elementProp name="client_secret" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${client_secret}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">client_secret</stringProp>
+                    <stringProp name="Argument.desc">false</stringProp>
+                  </elementProp>
+                  <elementProp name="scope" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${scope}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">scope</stringProp>
+                    <stringProp name="Argument.desc">false</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port">${GatewayPort}</stringProp>
+              <stringProp name="HTTPSampler.protocol">${GatewayProtocol}</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/oauth/client_credential</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.proxyHost"></stringProp>
+              <stringProp name="HTTPSampler.proxyPort"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response header" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1606201635">HTTP/1.1 200 OK</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Body" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="2100722851">&quot;token_type&quot;: &quot;Bearer&quot;,
+</stringProp>
+                  <stringProp name="409400788">&quot;expires_in&quot;: &quot;3599&quot;</stringProp>
+                  <stringProp name="56435272">&quot;access_token&quot;: </stringProp>
+                  <stringProp name="185236039">issued_at</stringProp>
+                  <stringProp name="-2007174139">&quot;scope&quot;: &quot;${scope}&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Access Token Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">access_token</stringProp>
+                <stringProp name="RegexExtractor.regex"> &quot;access_token&quot; : &quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+                <stringProp name="RegexExtractor.match_number"></stringProp>
+              </RegexExtractor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="APIXOAUTH2PASSWORD_TOKEN" enabled="false">
+            <stringProp name="TestPlan.comments">Please don&apos;t delete or update the Name of Controller</stringProp>
+          </GenericController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Access Token Generation - Grant , Scope , client Id and clientSecret is requirred" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="grant_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${grant_type}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">grant_type</stringProp>
+                    <stringProp name="Argument.desc">false</stringProp>
+                  </elementProp>
+                  <elementProp name="client_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${client_id}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">client_id</stringProp>
+                    <stringProp name="Argument.desc">false</stringProp>
+                  </elementProp>
+                  <elementProp name="scope" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${scope}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">scope</stringProp>
+                    <stringProp name="Argument.desc">false</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port">${GatewayPort}</stringProp>
+              <stringProp name="HTTPSampler.protocol">${GatewayProtocol}</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/v1/apixoauth2password/oauth/client_credential/accesstoken</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="content-type" elementType="Header">
+                    <stringProp name="Header.name">content-type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response header" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1606201635">HTTP/1.1 200 OK</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Body" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="2100722851">&quot;token_type&quot;: &quot;Bearer&quot;,
+</stringProp>
+                  <stringProp name="409400788">&quot;expires_in&quot;: &quot;3599&quot;</stringProp>
+                  <stringProp name="56435272">&quot;access_token&quot;: </stringProp>
+                  <stringProp name="185236039">issued_at</stringProp>
+                  <stringProp name="-1173123946">&quot;scope&quot;: &quot;${scope}&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Refresh Token Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">refresh_token</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;refresh_token&quot;:&quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+                <stringProp name="RegexExtractor.match_number"></stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="csrf token - Access Token Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+                <stringProp name="RegexExtractor.refname">access_token</stringProp>
+                <stringProp name="RegexExtractor.regex">csrf-token:\s+(.+)</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+                <stringProp name="RegexExtractor.match_number"></stringProp>
+              </RegexExtractor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="OPENID_TOKEN" enabled="false">
+            <stringProp name="TestPlan.comments">Please don&apos;t delete or update the Name of Controller</stringProp>
+          </GenericController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step1 - {testName} GET call for oauth2/redirect - scope for operation , redirect URI , clientid   is requirred." enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">oauth2/authorize?redirect_uri=${redirect_URI}&amp;client_id=${client_id}&amp;scope=${scope9} ${SCOPE_OPENID_2} ${SCOPE_OPENID_1}&amp;response_type=code&amp;state=123</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">TRANSACTIONID</stringProp>
+                    <stringProp name="Header.value">1234</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">messageID</stringProp>
+                    <stringProp name="Header.value">1234</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="authorization_header Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+                <stringProp name="RegexExtractor.refname">authorization_code_Manage</stringProp>
+                <stringProp name="RegexExtractor.regex">Location: [\S]+#/trx/(.*)</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+                <stringProp name="Sample.scope">all</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1606201635">HTTP/1.1 200 OK</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step 2 - ${testName} POST call for oauth/client_credential/accesstoken with scope IDP_AUTHCODE_DETAIL_WRITE - access token scope write is generated." enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="grant_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${grant_type}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">grant_type</stringProp>
+                  </elementProp>
+                  <elementProp name="client_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${client_id}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">client_id</stringProp>
+                  </elementProp>
+                  <elementProp name="client_secret" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${client_secret}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">client_secret</stringProp>
+                  </elementProp>
+                  <elementProp name="scope" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${IDP_SCOPE_WRITE}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">scope</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/oauth/client_credential</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">content-type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">accept</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Access Token Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">access_token_scope_write</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;access_token&quot;\s*:\s*&quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+                <stringProp name="RegexExtractor.match_number"></stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response header" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1606201635">HTTP/1.1 200 OK</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response text" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="2100722851">&quot;token_type&quot;: &quot;Bearer&quot;,
+</stringProp>
+                  <stringProp name="409400788">&quot;expires_in&quot;: &quot;3599&quot;</stringProp>
+                  <stringProp name="56435272">&quot;access_token&quot;: </stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <BSFAssertion guiclass="TestBeanGUI" testclass="BSFAssertion" testname="json validation" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">try {
+   eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+} catch(e) {
+      AssertionResult.setFailure(true); 
+    AssertionResult.setFailureMessage(&quot;ERROR: Expected a valid json&quot;);
+}</stringProp>
+                <stringProp name="scriptLanguage">javascript</stringProp>
+              </BSFAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step 3 ${testName} PUT call - IDP generating - scope operation , default payload is requirred - Code is generated" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+ &quot;sub&quot;: &quot;da53a9de-9c2d-4fdc-a865-a89fbe8fda63&quot;,&#xd;
+ &quot;scope&quot;: &quot;${SCOPE_OPENID_1} ${SCOPE_OPENID_2} ${scope9}&quot;,&#xd;
+ &quot;market&quot;: &quot;APAC&quot;,&#xd;
+ &quot;acr&quot;: &quot;3&quot;,&#xd;
+ &quot;auth_time&quot;: &quot;${__javaScript(Math.round(new Date().getTime() / 1000))}&quot;,&#xd;
+ &quot;msisdn&quot;:&quot;${msisdn}&quot;,&#xd;
+ &quot;claims&quot; : {&quot;name&quot;: &quot;Jane Doe&quot;,&quot;given_name&quot;: &quot;Jane&quot;,&quot;family_name&quot;: &quot;Doe&quot;,&quot;middle_name&quot;: &quot;ruth&quot;,&quot;nickname&quot;: &quot;joe&quot;,&quot;profile&quot;: &quot;https://google.com&quot;,&quot;picture&quot;: &quot;https://pictures.com&quot;,&quot;website&quot;: &quot;https://website.com&quot;,&quot;gender&quot;: &quot;Male&quot;,&quot;birthdate&quot;: &quot;2016-05-12&quot;,&quot;zoneinfo&quot;: &quot;Europe/Paris&quot;,&quot;preferred_username&quot;: &quot;j.doe&quot;,&quot;email&quot;: &quot;janedoe@example.com&quot;,&quot;locale&quot;:&quot;EN&quot;,&quot;updated_at&quot;:&quot;1234567890&quot;,&quot;address&quot;:{&quot;formatted&quot;:&quot;No. 17/2, 2nd &amp; 3rd Floor, Off 80 Feet Road, Industrial Estate, 7th Ma, 2nd B Cross Rd&quot;,&quot;street_address&quot;:&quot;SBI Colony&quot;,&quot;locality&quot;:&quot;Koramangla&quot;,&quot;region&quot;:&quot;Bangalore&quot;,&quot;postal_code&quot;:&quot;560034&quot;,&quot;country&quot;:&quot;India&quot;},&quot;email_verified&quot;:&quot;true&quot;,&quot;phone_number&quot;:&quot;9378653412&quot;,&quot;phone_number_verified&quot;:&quot;true&quot;,&quot;crid&quot;:&quot;1234&quot;}&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/idpauthcode/authcodes/authcode/${authorization_code_Manage}</stringProp>
+              <stringProp name="HTTPSampler.method">PUT</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Authorization</stringProp>
+                    <stringProp name="Header.value">Bearer ${access_token_scope_write}</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">TransactionID</stringProp>
+                    <stringProp name="Header.value">tt</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">MessageID</stringProp>
+                    <stringProp name="Header.value">65</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">accept</stringProp>
+                    <stringProp name="Header.value">application/vnd.infosys.a42+json</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">content-type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Code Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+                <stringProp name="RegexExtractor.refname">code_Manage</stringProp>
+                <stringProp name="RegexExtractor.regex">Location: [\S]+?code=(.+?)&amp;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+                <stringProp name="Sample.scope">all</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="109066600">HTTP/1.1 201 Created</stringProp>
+                  <stringProp name="1863441407">TransactionID: tt</stringProp>
+                  <stringProp name="-1090474329">MessageID: 65</stringProp>
+                  <stringProp name="3059181">code</stringProp>
+                  <stringProp name="109757585">state</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step 4 - ${testName} POST call - ID Token generation - Access token is get generated" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="grant_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${grant_type}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">grant_type</stringProp>
+                  </elementProp>
+                  <elementProp name="client_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${client_id}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">client_id</stringProp>
+                  </elementProp>
+                  <elementProp name="client_secret" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${client_secret}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">client_secret</stringProp>
+                  </elementProp>
+                  <elementProp name="code" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${code_Manage}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">code</stringProp>
+                  </elementProp>
+                  <elementProp name="redirect_uri" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${redirect_URI}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">redirect_uri</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/oauth/client_credential</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <BSFAssertion guiclass="TestBeanGUI" testclass="BSFAssertion" testname="json validation" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">try {
+   eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+} catch(e) {
+      AssertionResult.setFailure(true); 
+    AssertionResult.setFailureMessage(&quot;ERROR: Expected a valid json&quot;);
+}</stringProp>
+                <stringProp name="scriptLanguage">javascript</stringProp>
+              </BSFAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ResponseText" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1938933922">access_token</stringProp>
+                  <stringProp name="-2004515707">&quot;token_type&quot;: &quot;Bearer&quot;</stringProp>
+                  <stringProp name="-833810928">expires_in</stringProp>
+                  <stringProp name="-302143019">id_token</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1606201635">HTTP/1.1 200 OK</stringProp>
+                  <stringProp name="-43840953">application/json</stringProp>
+                  <stringProp name="-1896361636">Pragma</stringProp>
+                  <stringProp name="-2040128046">Cache-Control</stringProp>
+                  <stringProp name="81070450">UTF-8</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Access Token Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">access_token</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;access_token&quot;\s*:\s*&quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+                <stringProp name="RegexExtractor.match_number"></stringProp>
+              </RegexExtractor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree><GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="TEST_CASES" enabled="true">
+          <stringProp name="TestPlan.comments">Please don&apos;t delete or update the Name of Controller</stringProp>
+        </GenericController>
+        
+        <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TestCase_1 : Probe_B - Register a listener" enabled="true">
+            
+            <!--Test case Property-->
+            <stringProp name="HTTPSampler.port">${GatewayPort}</stringProp>
+            <stringProp name="HTTPSampler.protocol">${GatewayProtocol}</stringProp>
+            <stringProp name="HTTPSampler.path">${BasePath}hub</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>   <!-- Payload -->
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{"query":"string","callback":"string"}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <!-- Payload --></HTTPSamplerProxy>
+<hashTree><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+<collectionProp name="HeaderManager.headers"><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">Authorization</stringProp>
+                          <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                        </elementProp><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">Content-Type</stringProp>
+                          <stringProp name="Header.value">application/json</stringProp>
+                        </elementProp><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">target-stub</stringProp>
+                          <stringProp name="Header.value">true</stringProp>
+                        </elementProp></collectionProp>
+</HeaderManager>
+<hashTree/><BSFAssertion guiclass="TestBeanGUI" testclass="BSFAssertion" testname="json validation" enabled="true">
+                                          <stringProp name="filename"></stringProp>
+                                          <stringProp name="parameters"></stringProp>
+                                          <stringProp name="script">try {
+                               eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+                            } catch(e) {
+                                  AssertionResult.setFailure(true); 
+                                AssertionResult.setFailureMessage(&quot;ERROR: Expected a valid json&quot;);
+                            }</stringProp>
+                                          <stringProp name="scriptLanguage">javascript</stringProp>
+                                        </BSFAssertion>
+                                        <hashTree/><ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response header" enabled="true">
+                      <collectionProp name="Asserion.test_strings">
+                        <stringProp name="-1606201635">HTTP/1.1 201</stringProp>
+<stringProp name="1099833071">trace-transaction-id</stringProp>
+              <stringProp name="2122702">Date</stringProp>
+              <stringProp name="949037134">Content-Type</stringProp>                      </collectionProp>
+                      <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                      <boolProp name="Assertion.assume_success">true</boolProp>
+                      <intProp name="Assertion.test_type">2</intProp>
+                    </ResponseAssertion>
+                    <hashTree/><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Authorization</stringProp>
+            <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager></hashTree></hashTree><HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TestCase_2 : Probe_B - Updates partially a 'ChangeRequest' by Id" enabled="true">
+            
+            <!--Test case Property-->
+            <stringProp name="HTTPSampler.port">${GatewayPort}</stringProp>
+            <stringProp name="HTTPSampler.protocol">${GatewayProtocol}</stringProp>
+            <stringProp name="HTTPSampler.path">${BasePath}changeRequest/${id}</stringProp>
+            <stringProp name="HTTPSampler.method">PATCH</stringProp>   <!-- Payload -->
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{"targetEntity":"targetEntity","specification":"specification","priority":"priority","status":"status"}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <!-- Payload --></HTTPSamplerProxy>
+<hashTree><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+<collectionProp name="HeaderManager.headers"><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">Authorization</stringProp>
+                          <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                        </elementProp><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">Content-Type</stringProp>
+                          <stringProp name="Header.value">application/json</stringProp>
+                        </elementProp><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">target-stub</stringProp>
+                          <stringProp name="Header.value">true</stringProp>
+                        </elementProp></collectionProp>
+</HeaderManager>
+<hashTree/><BSFAssertion guiclass="TestBeanGUI" testclass="BSFAssertion" testname="json validation" enabled="true">
+                                          <stringProp name="filename"></stringProp>
+                                          <stringProp name="parameters"></stringProp>
+                                          <stringProp name="script">try {
+                               eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+                            } catch(e) {
+                                  AssertionResult.setFailure(true); 
+                                AssertionResult.setFailureMessage(&quot;ERROR: Expected a valid json&quot;);
+                            }</stringProp>
+                                          <stringProp name="scriptLanguage">javascript</stringProp>
+                                        </BSFAssertion>
+                                        <hashTree/><ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response header" enabled="true">
+                      <collectionProp name="Asserion.test_strings">
+                        <stringProp name="-1606201635">HTTP/1.1 200</stringProp>
+<stringProp name="1099833071">trace-transaction-id</stringProp>
+              <stringProp name="2122702">Date</stringProp>
+              <stringProp name="949037134">Content-Type</stringProp>                      </collectionProp>
+                      <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                      <boolProp name="Assertion.assume_success">true</boolProp>
+                      <intProp name="Assertion.test_type">2</intProp>
+                    </ResponseAssertion>
+                    <hashTree/><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Authorization</stringProp>
+            <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager></hashTree></hashTree><HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TestCase_3 : Probe_B - Retrieves a 'ChangeRequest' by Id" enabled="true">
+            
+            <!--Test case Property-->
+            <stringProp name="HTTPSampler.port">${GatewayPort}</stringProp>
+            <stringProp name="HTTPSampler.protocol">${GatewayProtocol}</stringProp>
+            <stringProp name="HTTPSampler.path">${BasePath}changeRequest/${id}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>   </HTTPSamplerProxy>
+<hashTree><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+<collectionProp name="HeaderManager.headers"><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">Authorization</stringProp>
+                          <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                        </elementProp><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">target-stub</stringProp>
+                          <stringProp name="Header.value">true</stringProp>
+                        </elementProp></collectionProp>
+</HeaderManager>
+<hashTree/><BSFAssertion guiclass="TestBeanGUI" testclass="BSFAssertion" testname="json validation" enabled="true">
+                                          <stringProp name="filename"></stringProp>
+                                          <stringProp name="parameters"></stringProp>
+                                          <stringProp name="script">try {
+                               eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+                            } catch(e) {
+                                  AssertionResult.setFailure(true); 
+                                AssertionResult.setFailureMessage(&quot;ERROR: Expected a valid json&quot;);
+                            }</stringProp>
+                                          <stringProp name="scriptLanguage">javascript</stringProp>
+                                        </BSFAssertion>
+                                        <hashTree/><ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response header" enabled="true">
+                      <collectionProp name="Asserion.test_strings">
+                        <stringProp name="-1606201635">HTTP/1.1 200</stringProp>
+<stringProp name="1099833071">trace-transaction-id</stringProp>
+              <stringProp name="2122702">Date</stringProp>
+              <stringProp name="949037134">Content-Type</stringProp>                      </collectionProp>
+                      <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                      <boolProp name="Assertion.assume_success">true</boolProp>
+                      <intProp name="Assertion.test_type">2</intProp>
+                    </ResponseAssertion>
+                    <hashTree/><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Authorization</stringProp>
+            <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager></hashTree></hashTree><HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TestCase_4 : Probe_B - Deletes a 'ChangeRequest' by Id" enabled="true">
+            
+            <!--Test case Property-->
+            <stringProp name="HTTPSampler.port">${GatewayPort}</stringProp>
+            <stringProp name="HTTPSampler.protocol">${GatewayProtocol}</stringProp>
+            <stringProp name="HTTPSampler.path">${BasePath}changeRequest/${id}</stringProp>
+            <stringProp name="HTTPSampler.method">DELETE</stringProp>   </HTTPSamplerProxy>
+<hashTree><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+<collectionProp name="HeaderManager.headers"><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">Authorization</stringProp>
+                          <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                        </elementProp><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">target-stub</stringProp>
+                          <stringProp name="Header.value">true</stringProp>
+                        </elementProp></collectionProp>
+</HeaderManager>
+<hashTree/><BSFAssertion guiclass="TestBeanGUI" testclass="BSFAssertion" testname="json validation" enabled="true">
+                                          <stringProp name="filename"></stringProp>
+                                          <stringProp name="parameters"></stringProp>
+                                          <stringProp name="script">try {
+                               eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+                            } catch(e) {
+                                  AssertionResult.setFailure(true); 
+                                AssertionResult.setFailureMessage(&quot;ERROR: Expected a valid json&quot;);
+                            }</stringProp>
+                                          <stringProp name="scriptLanguage">javascript</stringProp>
+                                        </BSFAssertion>
+                                        <hashTree/><ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response header" enabled="true">
+                      <collectionProp name="Asserion.test_strings">
+                        <stringProp name="-1606201635">HTTP/1.1 204</stringProp>
+<stringProp name="1099833071">trace-transaction-id</stringProp>
+              <stringProp name="2122702">Date</stringProp>
+              <stringProp name="949037134">Content-Type</stringProp>                      </collectionProp>
+                      <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                      <boolProp name="Assertion.assume_success">true</boolProp>
+                      <intProp name="Assertion.test_type">2</intProp>
+                    </ResponseAssertion>
+                    <hashTree/><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Authorization</stringProp>
+            <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager></hashTree></hashTree><HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TestCase_5 : Probe_B - Creates a 'ChangeRequest'" enabled="true">
+            
+            <!--Test case Property-->
+            <stringProp name="HTTPSampler.port">${GatewayPort}</stringProp>
+            <stringProp name="HTTPSampler.protocol">${GatewayProtocol}</stringProp>
+            <stringProp name="HTTPSampler.path">${BasePath}changeRequest</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>   <!-- Payload -->
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{"status":"stsus"}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <!-- Payload --></HTTPSamplerProxy>
+<hashTree><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+<collectionProp name="HeaderManager.headers"><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">Authorization</stringProp>
+                          <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                        </elementProp><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">Content-Type</stringProp>
+                          <stringProp name="Header.value">application/json</stringProp>
+                        </elementProp><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">target-stub</stringProp>
+                          <stringProp name="Header.value">true</stringProp>
+                        </elementProp></collectionProp>
+</HeaderManager>
+<hashTree/><BSFAssertion guiclass="TestBeanGUI" testclass="BSFAssertion" testname="json validation" enabled="true">
+                                          <stringProp name="filename"></stringProp>
+                                          <stringProp name="parameters"></stringProp>
+                                          <stringProp name="script">try {
+                               eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+                            } catch(e) {
+                                  AssertionResult.setFailure(true); 
+                                AssertionResult.setFailureMessage(&quot;ERROR: Expected a valid json&quot;);
+                            }</stringProp>
+                                          <stringProp name="scriptLanguage">javascript</stringProp>
+                                        </BSFAssertion>
+                                        <hashTree/><ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response header" enabled="true">
+                      <collectionProp name="Asserion.test_strings">
+                        <stringProp name="-1606201635">HTTP/1.1 201</stringProp>
+<stringProp name="1099833071">trace-transaction-id</stringProp>
+              <stringProp name="2122702">Date</stringProp>
+              <stringProp name="949037134">Content-Type</stringProp>                      </collectionProp>
+                      <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                      <boolProp name="Assertion.assume_success">true</boolProp>
+                      <intProp name="Assertion.test_type">2</intProp>
+                    </ResponseAssertion>
+                    <hashTree/><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Authorization</stringProp>
+            <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager></hashTree></hashTree><HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TestCase_6 : Probe_B - List or find 'ChangeRequest' objects" enabled="true">
+            
+            <!--Test case Property-->
+            <stringProp name="HTTPSampler.port">${GatewayPort}</stringProp>
+            <stringProp name="HTTPSampler.protocol">${GatewayProtocol}</stringProp>
+            <stringProp name="HTTPSampler.path">${BasePath}changeRequest</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>   </HTTPSamplerProxy>
+<hashTree><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+<collectionProp name="HeaderManager.headers"><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">Authorization</stringProp>
+                          <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                        </elementProp><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">target-stub</stringProp>
+                          <stringProp name="Header.value">true</stringProp>
+                        </elementProp></collectionProp>
+</HeaderManager>
+<hashTree/><BSFAssertion guiclass="TestBeanGUI" testclass="BSFAssertion" testname="json validation" enabled="true">
+                                          <stringProp name="filename"></stringProp>
+                                          <stringProp name="parameters"></stringProp>
+                                          <stringProp name="script">try {
+                               eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+                            } catch(e) {
+                                  AssertionResult.setFailure(true); 
+                                AssertionResult.setFailureMessage(&quot;ERROR: Expected a valid json&quot;);
+                            }</stringProp>
+                                          <stringProp name="scriptLanguage">javascript</stringProp>
+                                        </BSFAssertion>
+                                        <hashTree/><ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response header" enabled="true">
+                      <collectionProp name="Asserion.test_strings">
+                        <stringProp name="-1606201635">HTTP/1.1 200</stringProp>
+<stringProp name="1099833071">trace-transaction-id</stringProp>
+              <stringProp name="2122702">Date</stringProp>
+              <stringProp name="949037134">Content-Type</stringProp>                      </collectionProp>
+                      <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                      <boolProp name="Assertion.assume_success">true</boolProp>
+                      <intProp name="Assertion.test_type">2</intProp>
+                    </ResponseAssertion>
+                    <hashTree/><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Authorization</stringProp>
+            <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager></hashTree></hashTree><HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TestCase_7 : Probe_B - Unregister a listener" enabled="true">
+            
+            <!--Test case Property-->
+            <stringProp name="HTTPSampler.port">${GatewayPort}</stringProp>
+            <stringProp name="HTTPSampler.protocol">${GatewayProtocol}</stringProp>
+            <stringProp name="HTTPSampler.path">${BasePath}hub/${id}</stringProp>
+            <stringProp name="HTTPSampler.method">DELETE</stringProp>   </HTTPSamplerProxy>
+<hashTree><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+<collectionProp name="HeaderManager.headers"><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">Authorization</stringProp>
+                          <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                        </elementProp><elementProp name="" elementType="Header">
+                          <stringProp name="Header.name">target-stub</stringProp>
+                          <stringProp name="Header.value">true</stringProp>
+                        </elementProp></collectionProp>
+</HeaderManager>
+<hashTree/><BSFAssertion guiclass="TestBeanGUI" testclass="BSFAssertion" testname="json validation" enabled="true">
+                                          <stringProp name="filename"></stringProp>
+                                          <stringProp name="parameters"></stringProp>
+                                          <stringProp name="script">try {
+                               eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+                            } catch(e) {
+                                  AssertionResult.setFailure(true); 
+                                AssertionResult.setFailureMessage(&quot;ERROR: Expected a valid json&quot;);
+                            }</stringProp>
+                                          <stringProp name="scriptLanguage">javascript</stringProp>
+                                        </BSFAssertion>
+                                        <hashTree/><ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response header" enabled="true">
+                      <collectionProp name="Asserion.test_strings">
+                        <stringProp name="-1606201635">HTTP/1.1 204</stringProp>
+<stringProp name="1099833071">trace-transaction-id</stringProp>
+              <stringProp name="2122702">Date</stringProp>
+              <stringProp name="949037134">Content-Type</stringProp>                      </collectionProp>
+                      <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+                      <boolProp name="Assertion.assume_success">true</boolProp>
+                      <intProp name="Assertion.test_type">2</intProp>
+                    </ResponseAssertion>
+                    <hashTree/><HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Authorization</stringProp>
+            <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager></hashTree></hashTree></hashTree></hashTree></hashTree>        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <objProp>
+            <name></name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree/>
+  </hashTree>
+</jmeterTestPlan></collectionProp>

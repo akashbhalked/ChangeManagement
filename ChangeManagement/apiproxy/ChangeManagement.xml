@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<APIProxy revison="1" name="ChangeManagement">
+  <CreatedAt>1579254202</CreatedAt>
+  <Description>Change Management</Description>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+  <TargetEndpoints>
+    <TargetEndpoint>default</TargetEndpoint>
+  </TargetEndpoints>
+  <Policies>
+    <Policy>0-SF-ExtractHeaders</Policy>
+    <Policy>0-SF-ExtractQueryParams</Policy>
+    <Policy>0-SF-HandleFaults</Policy>
+    <Policy>0-SF-CheckTransactionId</Policy>
+    <Policy>0-SF-RouteToTargetServer</Policy>
+    <Policy>0-SF-SetBEHeaders</Policy>
+    <Policy>0-SF-SetOutHeaders</Policy>
+    <Policy>0-SF-ApplySpikeArrest</Policy>
+    <Policy>0-SF-ValidateHeaders</Policy>
+    <Policy>0-SF-ValidateOAuthToken</Policy>
+    <Policy>0-SF-ValidateOpCo</Policy>
+    <Policy>0-SF-ValidateQueryParams</Policy>
+    <Policy>0-SF-ValidateRequest</Policy>
+    <Policy>0-SF-ValidateRequestProtocol</Policy>
+    <Policy>0-SF-ValidateResponse</Policy>
+    <Policy>0-SF-ValidatePayloadSize</Policy>
+    <Policy>0-SF-LogContent</Policy>
+  </Policies>
+</APIProxy>

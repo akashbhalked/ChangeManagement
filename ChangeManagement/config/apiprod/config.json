@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "prod",
+            "policies": [],
+			"proxies": [],
+            "targets": []
+		}
+	]
+}

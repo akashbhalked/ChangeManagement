@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "dev",
+            "policies": [],
+			"proxies": [],
+            "targets": []
+		}
+	]
+}

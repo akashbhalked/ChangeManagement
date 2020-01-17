@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FlowCallout async="false" continueOnError="false" enabled="true" name="0-SF-ApigeeAnalytics">
+    <DisplayName>0-SF-ApigeeAnalytics</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <SharedFlowBundle>0-SF-ApigeeAnalytics</SharedFlowBundle>
+</FlowCallout>

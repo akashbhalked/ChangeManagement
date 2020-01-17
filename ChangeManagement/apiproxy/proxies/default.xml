@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProxyEndpoint name="default">
+  <Description>Change Management</Description>
+  <Flows>
+    <Flow name="listChangeRequest">
+      <Condition>(proxy.pathsuffix MatchesPath "/changeRequest") and (request.verb = "GET")</Condition>
+      <Description>List or find 'ChangeRequest' objects</Description>
+      <Request>
+        <Step>
+          <Name>0-SF-ValidateOAuthToken</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCORS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCSRF</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateXSS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateHeaders</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateQueryParams</Name>
+        </Step>
+      </Request>
+      <Response/>
+    </Flow>
+    <Flow name="createChangeRequest">
+      <Condition>(proxy.pathsuffix MatchesPath "/changeRequest") and (request.verb = "POST")</Condition>
+      <Description>Creates a 'ChangeRequest'</Description>
+      <Request>
+        <Step>
+          <Name>0-SF-ValidateOAuthToken</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCORS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCSRF</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateXSS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateHeaders</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateQueryParams</Name>
+        </Step>
+      </Request>
+      <Response/>
+    </Flow>
+    <Flow name="retrieveChangeRequest">
+      <Condition>(proxy.pathsuffix MatchesPath "/changeRequest/{id}") and (request.verb = "GET")</Condition>
+      <Description>Retrieves a 'ChangeRequest' by Id</Description>
+      <Request>
+        <Step>
+          <Name>0-SF-ValidateOAuthToken</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCORS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCSRF</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateXSS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateHeaders</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateQueryParams</Name>
+        </Step>
+      </Request>
+      <Response/>
+    </Flow>
+    <Flow name="patchChangeRequest">
+      <Condition>(proxy.pathsuffix MatchesPath "/changeRequest/{id}") and (request.verb = "PATCH")</Condition>
+      <Description>Updates partially a 'ChangeRequest' by Id</Description>
+      <Request>
+        <Step>
+          <Name>0-SF-ValidateOAuthToken</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCORS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCSRF</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateXSS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateHeaders</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateQueryParams</Name>
+        </Step>
+      </Request>
+      <Response/>
+    </Flow>
+    <Flow name="deleteChangeRequest">
+      <Condition>(proxy.pathsuffix MatchesPath "/changeRequest/{id}") and (request.verb = "DELETE")</Condition>
+      <Description>Deletes a 'ChangeRequest' by Id</Description>
+      <Request>
+        <Step>
+          <Name>0-SF-ValidateOAuthToken</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCORS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCSRF</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateXSS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateHeaders</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateQueryParams</Name>
+        </Step>
+      </Request>
+      <Response/>
+    </Flow>
+    <Flow name="registerListener">
+      <Condition>(proxy.pathsuffix MatchesPath "/hub") and (request.verb = "POST")</Condition>
+      <Description>Register a listener</Description>
+      <Request>
+        <Step>
+          <Name>0-SF-ValidateOAuthToken</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCORS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCSRF</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateXSS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateHeaders</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateQueryParams</Name>
+        </Step>
+      </Request>
+      <Response/>
+    </Flow>
+    <Flow name="unregisterListener">
+      <Condition>(proxy.pathsuffix MatchesPath "/hub/{id}") and (request.verb = "DELETE")</Condition>
+      <Description>Unregister a listener</Description>
+      <Request>
+        <Step>
+          <Name>0-SF-ValidateOAuthToken</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCORS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateCSRF</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateXSS</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateHeaders</Name>
+        </Step>
+        <Step>
+          <Name>0-SF-ValidateQueryParams</Name>
+        </Step>
+      </Request>
+      <Response/>
+    </Flow>
+    <Flow name="METHOD_NOT_ALLOWED">
+      <Condition>((proxy.pathsuffix MatchesPath "/changeRequest") and (request.verb != "GET")) or ((proxy.pathsuffix MatchesPath "/changeRequest") and (request.verb != "POST")) or ((proxy.pathsuffix MatchesPath "/changeRequest/{id}") and (request.verb != "GET")) or ((proxy.pathsuffix MatchesPath "/changeRequest/{id}") and (request.verb != "PATCH")) or ((proxy.pathsuffix MatchesPath "/changeRequest/{id}") and (request.verb != "DELETE")) or ((proxy.pathsuffix MatchesPath "/hub") and (request.verb != "POST")) or ((proxy.pathsuffix MatchesPath "/hub/{id}") and (request.verb != "DELETE"))</Condition>
+      <Request>
+        <Step>
+          <Name>4-JS-MethodNotAllowed</Name>
+        </Step>
+      </Request>
+    </Flow>
+    <Flow name="RESOURCE_NOT_FOUND">
+      <Request>
+        <Step>
+          <Name>4-JS-ResourceNotFound</Name>
+        </Step>
+      </Request>
+    </Flow>
+  </Flows>
+  <HTTPProxyConnection>
+    <BasePath>/tmf-api/changeManagement/v2/</BasePath>
+    <VirtualHost>default</VirtualHost>
+  </HTTPProxyConnection>
+  <FaultRules>
+    <FaultRule name="all">
+      <Step>
+        <Name>0-SF-HandleFaults</Name>
+      </Step>
+      <Step>
+        <Name>4-JS-AssignLogPoint</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-LogContent</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-ApigeeAnalytics</Name>
+      </Step>
+    </FaultRule>
+  </FaultRules>
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>0-SF-CheckTransactionId</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-ValidatePayloadSize</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-ApplySpikeArrest</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-ApplyQuota</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-ValidateRequest</Name>
+        <Condition>(request.verb = "POST")</Condition>
+      </Step>
+      <Step>
+        <Name>4-JS-AssignLogPoint</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-LogContent</Name>
+      </Step>
+    </Request>
+    <Response/>
+  </PreFlow>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response>
+      <Step>
+        <Name>0-SF-SetOutHeaders</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-ValidateResponse</Name>
+      </Step>
+      <Step>
+        <Name>4-JS-AssignLogPoint</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-LogContent</Name>
+      </Step>
+      <Step>
+        <Name>0-SF-ApigeeAnalytics</Name>
+      </Step>
+    </Response>
+  </PostFlow>
+  <RouteRule name="default">
+    <Condition>(currentFlowName != "RESOURCE_NOT_FOUND") or (currentFlowName != "METHOD_NOT_ALLOWED")</Condition>
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+  <RouteRule name="nullTarget">
+    </RouteRule>
+  <RouteRule name="nullTarget">
+    </RouteRule>
+</ProxyEndpoint>

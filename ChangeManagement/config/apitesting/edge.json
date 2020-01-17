@@ -1,0 +1,98 @@
+{
+  "version": "2.0",
+  "envConfig": {
+    "testing": {
+      "kvms": [
+        {
+          "name": "SF-KVM-RouteToTargetServer",
+          "entry": [
+            {
+              "name": "ChangeManagement",
+              "value": "{\"TARGET_DEFAULT\": {\"TARGET_HOST\": \"apidev.com\",\"TARGET_PORT\": \"443\",\"TARGET_BASEPATH\": \"/shoppingCart/\",\"TARGET_ENABLED\": true,\"TARGET_SSL_ENABLED\": true,\"TARGET_SSL_CIPHERS\": \"\",\"TARGET_SSL_CLIENT_AUTH_ENABLED\": false,\"TARGET_SSL_KEY_STORE\": \"ApiDevClientCert\",\"TARGET_SSL_KEY_ALIAS\": \"ApiDevClientCert\",\"TARGET_SSL_TRUST_STORE\": \"\",\"TARGET_SSL_PROTOCOLS\": \"TLSv1.1,TLSv1.2\",\"TARGET_SSL_IGNORE_VALIDATION_ERRORS\": \"false\"},\"TARGET_STUB\": {\"TARGET_HOST\": \"getsandbox.com\",\"TARGET_PORT\": \"80\",\"TARGET_BASEPATH\": \"targetBasepath\",\"TARGET_ENABLED\": true,\"TARGET_SSL_ENABLED\": true,\"TARGET_SSL_CIPHERS\": \"\",\"TARGET_SSL_CLIENT_AUTH_ENABLED\": false,\"TARGET_SSL_KEY_STORE\": \"ApiDevClientCert\",\"TARGET_SSL_KEY_ALIAS\": \"ApiDevClientCert\",\"TARGET_SSL_TRUST_STORE\": \"\",\"TARGET_SSL_PROTOCOLS\": \"\",\"TARGET_SSL_IGNORE_VALIDATION_ERRORS\": \"false\"}}"
+            }
+          ]
+        },
+        {
+          "name": "SF-KVM-apiScopes",
+          "entry": [
+            {
+              "name": "ChangeManagement",
+              "value": "CHANGE_MANAGEMENT_ALL"
+            }
+          ]
+        },
+        {
+          "name": "SF-KVM-ApiAllowedScopes",
+          "entry": [
+            {
+              "name": "ChangeManagement",
+              "value": "[{\"flowName\":\"listChangeRequest\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"createChangeRequest\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"retrieveChangeRequest\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"patchChangeRequest\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"deleteChangeRequest\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"registerListener\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"},{\"flowName\":\"unregisterListener\",\"allowedScopesList\":\"CHANGE_MANAGEMENT_ALL\"}]"
+            }
+          ]
+        },
+        {
+          "name": "SF-KVM-ValidateQueryParams",
+          "entry": [
+            {
+              "name": "ChangeManagement",
+              "value": "{}"
+            }
+          ]
+        },
+        {
+          "name": "SF-KVM-ValidateHeaders",
+          "entry": [
+            {
+              "name": "ChangeManagement",
+              "value": "{\"acceptValues\":[\"application/json\",\"*/*\",\"applcation/*\"],\"contentTypeValues\":[\"application/json\",\"application/json; charset=utf-8\"],\"contentTypePatchValues\":[\"application/json\"]}"
+            }
+          ]
+        }
+      ],
+      "targetServers": []
+    }
+  },
+  "orgConfig": {
+    "apiProducts": [
+      {
+        "apiResources": [
+          "/**",
+          "**"
+        ],
+        "approvalType": "auto",
+        "attributes": [
+          {
+            "name": "access",
+            "value": "public"
+          }
+        ],
+        "description": "API Consumer is allowed to access all resources",
+        "displayName": "CHANGE_MANAGEMENT_ALL",
+        "environments": [
+          "testing"
+        ],
+        "name": "CHANGE_MANAGEMENT_ALL",
+        "proxies": [
+          "OAuth2ClientCredentials",
+          "ChangeManagement"
+        ]
+      }
+    ]
+  },
+  "apiConfig": {
+    "ChangeManagement": {
+      "maskconfigs": [
+        {
+          "name": "default",
+          "variables": [
+            "request.header.Authorization.values",
+            "request.header.Authorization",
+            "message.header.Authorization.values",
+            "access_token",
+            "apigee.access_token"
+          ]
+        }
+      ]
+    }
+  }
+}
